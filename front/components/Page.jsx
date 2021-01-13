@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function App() {
+export default function Page() {
     return (
         <div>
-            / : Hello World from react
+            /page : Hello World from react
         </div>
     )
 }

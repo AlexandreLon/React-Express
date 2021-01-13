@@ -7,4 +7,8 @@ router.get("/", (req, res) => {
     res.send(edge.render('index'))
 });
 
+router.get("/page", (req, res) => {
+    res.send(edge.render('page'))
+});
+
 export default router;
