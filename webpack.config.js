@@ -6,6 +6,7 @@ const config = {
     'react-hot-loader/patch',
     './front/index.js'
   ],
+  devtool: 'source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
