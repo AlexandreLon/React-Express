@@ -32,7 +32,9 @@
 		"back:dev": "nodemon index.js --ignore ./front",
 		"front:clean": "rm dist/bundle.js",
 		"front:dev": "webpack --watch --mode development",
-		"front:prod": "webpack --mode production"
+		"front:prod": "webpack --mode production",
+		"start": "yarn back:dev & yarn front:dev",
+		"prod": "yarn back:start & yarn front:prod"
 	},
 	"devDependencies": {
 		"@babel/core": "^7.12.10",
