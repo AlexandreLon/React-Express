@@ -1,4 +1,5 @@
 require('ignore-styles')
+require("regenerator-runtime/runtime");
 
 require('@babel/register')({
     ignore: [/(node_module)/],

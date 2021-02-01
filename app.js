@@ -1,11 +1,13 @@
 import express from 'express'
 import edge from 'edge.js'
 import path from 'path'
-import indexRouter from './routes'
+import indexRouter from './app/routes'
 
 const app = express();
+const mongoose = require('mongoose');
+mongoose.connect('mongodb://localhost/projet-web-server-client', {useNewUrlParser: true, useUnifiedTopology: true});
 
-edge.registerViews(path.join(__dirname, './views'))
+edge.registerViews(path.join(__dirname, './resources/views'))
 
 edge.configure({
   cache: process.env.NODE_ENV === 'production'

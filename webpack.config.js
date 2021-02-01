@@ -5,7 +5,8 @@ const ExtractCssChunks = require('extract-css-chunks-webpack-plugin');
 const config = {
   entry: [
     'react-hot-loader/patch',
-    './front/index.js'
+    './front/index.js',
+    './resources/scss/app.scss'
   ],
   devtool: 'source-map',
   output: {
@@ -21,13 +22,19 @@ const config = {
       },
       {
         test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
+        test: /\.s[ac]ss$/i,
         use: [
-          {
-            loader: ExtractCssChunks.loader,
-          },
-          'css-loader',
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
         ],
-      }
+      },
     ]
   },
   resolve: {

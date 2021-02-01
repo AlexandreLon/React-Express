@@ -1,0 +1,8 @@
+@layout('layouts/home')
+
+@section('content')
+    <h1>Users : {{users.length}}</h1>
+    @each(user in users)
+    <li> {{ user.username }} </li>
+    @endeach
+@endsection

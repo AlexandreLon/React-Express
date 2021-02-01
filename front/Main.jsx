@@ -5,7 +5,7 @@ export default function Main({ component }) {
     const [Component, setComponent] = useState(<div>loading</div>)
 
     useEffect(() => {
-        import(`./components/${component}.jsx`)
+        import(`../resources/components/${component}.jsx`)
         .then((m) => {
             const Current = m.default;
             setComponent(<Current></Current>)
